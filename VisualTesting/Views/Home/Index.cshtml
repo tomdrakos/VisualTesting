@@ -1,0 +1,197 @@
+﻿    @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>*@
+    <div ng-controller="PediatricianAskFormController as vm">
+        <span data-ng-model="vm.person.name">{{vm.person.name}}</span>
+        <br />
+        <input type="text" name="lastName" ng-model="vm.person.name">
+        <br />
+        <button data-ng-click="vm.check()">check</button>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Infekcji >> pierwsza konsultacja
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            @Html.Partial("PartialView/_FirstConsultation")
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Infekcji >> w tracie leczenia infekcji
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            @Html.Partial("PartialView/_DuringThreatment")
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Przewlekłego problemu zdrowotnego
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            collapseThree
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                Szczepień, bilansów
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            collapseFour
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                Pielęgnacji, żywienia
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            collapseFive
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                Innego problemu
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            collapseSix
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+@*<div class="modal fade bs-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="symptom-item">
+                                <label for="recipient-name" class="control-label">Gorączka:</label>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default btn-yes">Tak</button>
+                                    <button type="button" class="btn btn-default btn-no">Nie</button>
+                                </div>
+                                <div class="symptom-item-details">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="control-label symptom-item-details-label">Stopnie:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" placeholder="stopnie">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="control-label symptom-item-details-label">Od kiedy:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-default">
+                                                    <input name="year" type="radio">1 dzień
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input name="year" type="radio">2 dni
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input name="year" type="radio">3 dni
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input name="year" type="radio">4 dni
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input name="year" type="radio">5 dni i więcej
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <label for="message-text" class="control-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@*<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="row">
+                    asdasdad
+                    <div class="form-group">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">Tak</button>
+                            <button type="button" class="btn btn-default">Nie</button>
+                        </div>
+                        <div class="row inner">
+                            <br />
+                            <div class="col-md-4 item-child">Ból brzucha</div>
+                            <div class="col-md-8"><textarea class="form-control clear-me" cols="20" data-autoresize="" style="word-wrap: break-word; height: 54px;"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            asdasdad
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">Tak</button>
+                                <button type="button" class="btn btn-default">Nie</button>
+                            </div>
+                            <br />
+                            <div class="col-md-4 item-child">Bóle głowy</div>
+                            <div class="col-md-8"><textarea class="form-control clear-me" cols="20" data-autoresize="" style="word-wrap: break-word; height: 54px;"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+        </div>
+    </div>*@
